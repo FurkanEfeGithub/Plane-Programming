@@ -11,13 +11,15 @@ public class PlayerControllerX : MonoBehaviour
 {
     //HIZ DEGISKENI
     //PUBLIC(HERKESE ACIK) FLOAT(ONDALIKLI SAYI) SPEED(HIZ DEGISKENIMIZIN ADI) = 5.0f(FLOAT(ONDALIKLI SAYI))
-    public float speed = 5.0f;
+    //-------------------------------------------------------------------------------
+    //PROJEMIZIN EN SON ASAMASINA GELDIK.PUBLIC(HERKESE ACIK) OLAN DEGISKENLERI PRIVATE(OZEL,GIZLI) YAPACAGIZ.
+    private float speed = 5.0f;
     //DONUS HIZI DEGISKENI
     //PUBLIC(HERKESE ACIK) FLOAT(ONDALIKLI SAYI) ROTATIONSPEED(DONUS HIZI(DEGISKENIMIZIN ADI)
-    public float rotationSpeed;
+    private float rotationSpeed;
     //DIKEY GIRIS DEGISKENI
     //PUBLIC(HERKESE ACIK) FLOAT(ONDALIKLI SAYI) VERTICALINPUT((DIKEYGIRIS)DEGISKENIMIZIN ADI);
-    public float verticalInput;
+    private float verticalInput;
 
     void Update()
     {
@@ -39,6 +41,7 @@ public class PlayerControllerX : MonoBehaviour
         //ORN:ASAGI YON TUSUNA BASTIGIMDA VERTICALINPUT -1 DEGERINI ALIR.EGER BEN BIR DAHA -1 ILE CARPARSAM -*-= + YAPACAGI ICIN.BU SORUNU COZMUS OLURUM.
         //----------------------------------------------------------------------------------------------------------
         //transform(ARACIN TRANSFORMU).Rotate(DONMEK)(VECTOR3(3D(x,y,z)).RIGHT(SAG) * Time.deltaTime(ZAMAN FARKI)* ROTATIONSPEED(DONUSHIZI DEGISKENI) * verticalInput(DIKEY GIRIS DEGISKENI) * -1(EKSI*EKSI=ARTI MANTIGI));
+        //NIYE RIGHT KULLANDIK?UP KULLANMADIK?SONUCTA UCAGI YUKARI VE ASAGI HAREKET ETTIRECEGIM.
         transform.Rotate(Vector3.right * Time.deltaTime * rotationSpeed * verticalInput * -1);
     }
 }
