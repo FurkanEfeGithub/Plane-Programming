@@ -24,24 +24,3 @@ public class FollowPlayerX : MonoBehaviour
         transform.position = plane.transform.position + offset;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
