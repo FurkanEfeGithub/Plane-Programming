@@ -16,7 +16,7 @@ public class PlayerControllerX : MonoBehaviour
     private float speed = 5.0f;
     //DONUS HIZI DEGISKENI
     //PUBLIC(HERKESE ACIK) FLOAT(ONDALIKLI SAYI) ROTATIONSPEED(DONUS HIZI(DEGISKENIMIZIN ADI)
-    private float rotationSpeed;
+    private float rotationSpeed = 45.0f;
     //DIKEY GIRIS DEGISKENI
     //PUBLIC(HERKESE ACIK) FLOAT(ONDALIKLI SAYI) VERTICALINPUT((DIKEYGIRIS)DEGISKENIMIZIN ADI);
     private float verticalInput;
@@ -41,7 +41,7 @@ public class PlayerControllerX : MonoBehaviour
         //ORN:ASAGI YON TUSUNA BASTIGIMDA VERTICALINPUT -1 DEGERINI ALIR.EGER BEN BIR DAHA -1 ILE CARPARSAM -*-= + YAPACAGI ICIN.BU SORUNU COZMUS OLURUM.
         //----------------------------------------------------------------------------------------------------------
         //transform(ARACIN TRANSFORMU).Rotate(DONMEK)(VECTOR3(3D(x,y,z)).RIGHT(SAG) * Time.deltaTime(ZAMAN FARKI)* ROTATIONSPEED(DONUSHIZI DEGISKENI) * verticalInput(DIKEY GIRIS DEGISKENI) * -1(EKSI*EKSI=ARTI MANTIGI));
-        //NIYE RIGHT KULLANDIK?UP KULLANMADIK?SONUCTA UCAGI YUKARI VE ASAGI HAREKET ETTIRECEGIM.
+        //NIYE RIGHT KULLANDIK?UP KULLANMADIK?SONUCTA UCAGI YUKARI VE ASAGI HAREKET
         transform.Rotate(Vector3.right * Time.deltaTime * rotationSpeed * verticalInput * -1);
     }
 }
